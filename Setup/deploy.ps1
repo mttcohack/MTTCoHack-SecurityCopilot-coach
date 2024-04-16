@@ -1,0 +1,2 @@
+New-AzResourceGroup -name rg-hack -location northeurope
+New-AzResourceGroupDeployment -Name co-hack-deployment -ResourceGroupName rg-hack  -TemplateFile co-hack-architecture.bicep  -TemplateParameterFile co-hack-architecture.parameters.json 
