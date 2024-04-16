@@ -1,4 +1,4 @@
-# Hacking-Game-Coach
+# Hacking Game on Copilot for Security Coach
 
 ## Setup instructions
 
