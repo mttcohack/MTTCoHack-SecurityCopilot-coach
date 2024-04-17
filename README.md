@@ -25,7 +25,7 @@
     - Login
     - Password 
 
-## Solution
+## Solution For Challenge 1
 
 ## Creating Sentinel Incident Data
 
@@ -106,6 +106,8 @@
     ![win-sec](./images/mstc.jpg)
 
 >**Note**: Don't modify the "user name" parameter
+
+## Solution For Challenge 2
 
 ## Unified Security Operations Platform
 
