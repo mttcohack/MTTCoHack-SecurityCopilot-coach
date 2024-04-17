@@ -27,6 +27,8 @@
 
 ## Solution
 
+## Creating Sentinel Incident Data
+
 1. Connect to the hack-vm using RDP. Your coach will provide you with the Public IP address and credentials.
 
 2. Use a tool from the toolbox to discover the private IP address of the workstation-vm.
@@ -105,6 +107,8 @@
 
 >**Note**: Don't modify the "user name" parameter
 
+## Unified Security Operations Platform
+
 6. Connecting Sentinel into Defender XDR (Preview)
 
     a. Microsoft Sentinel is now available as part of the public preview for the Unified Security operations platform in the Microsoft Defender XDR portal. Refer to this documentation https://learn.microsoft.com/en-us/azure/sentinel/microsoft-sentinel-defender-portal on how to connect Microsoft Sentinel to Microsoft Defender XDR.
@@ -115,7 +119,9 @@
 
     c. Validate incident data created from previous sections are showing up.
 
-8. Implementation of Copilot for Security Steps without the Azure Portal
+## Enabling Copilot for Security (CFS)
+
+7. Implementation of Copilot for Security Steps without the Azure Portal
 
     a. Read Learn documentation https://learn.microsoft.com/en-us/training/modules/security-copilot-getting-started/6-describe-how-to-enable-security-copilot for general implementation information
 
@@ -147,7 +153,9 @@
 
     ![nmap](./images/cfs-promptbar.jpg)
 
-9. Validation of Copilot for Security (CFS) embedded experience in Defender XDR
+## Validation That All Services Are Working
+
+8. Validation of Copilot for Security (CFS) embedded experience in Defender XDR
 
     a. Go to https://security.microsoft.com (Defender XDR portal) on the left select pane: Investigation & Response - Incidents & Alerts - Incidents.
 
