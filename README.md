@@ -27,7 +27,7 @@
 
 ## Solution For Challenge 1
 
-## Creating Sentinel Incident Data
+## Creating Sentinel Incident Data As An Attacker
 
 1. Connect to the hack-vm using RDP. Your coach will provide you with the Public IP address and credentials.
 
@@ -109,7 +109,7 @@
 
 ## Solution For Challenge 2
 
-## Unified Security Operations Platform
+## Unified Security Operations Platform As A Defender
 
 6. Connecting Sentinel into Defender XDR (Preview)
 
@@ -121,7 +121,7 @@
 
     c. Validate incident data created from previous sections are showing up.
 
-## Enabling Copilot for Security (CFS)
+## Enabling Copilot for Security (CFS) For Help Remediations As A Defender
 
 7. Implementation of Copilot for Security Steps without the Azure Portal
 
