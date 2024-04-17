@@ -105,6 +105,64 @@
 
 >**Note**: Don't modify the "user name" parameter
 
+6. Connecting Sentinel into Defender XDR (Preview)
+
+    a. Microsoft Sentinel is now available as part of the public preview for the Unified Security operations platform in the Microsoft Defender XDR portal. Refer to this documentation https://learn.microsoft.com/en-us/azure/sentinel/microsoft-sentinel-defender-portal on how to connect Microsoft Sentinel to Microsoft Defender XDR.
+
+    ![nmap](./images/xdr-sentinel-defender-portal.jpg)
+
+    b. Go to https://security.microsoft.com (Defender XDR portal) on the left select pane: Investigation & Response - Incidents & Alerts - Incidents.
+
+    c. Validate incident data created from previous sections are showing up.
+
+8. Implementation of Copilot for Security Steps without the Azure Portal
+
+    a. Read Learn documentation https://learn.microsoft.com/en-us/training/modules/security-copilot-getting-started/6-describe-how-to-enable-security-copilot for general implementation information
+
+    b. Go to https://securitycopilot.microsoft.com
+
+    c. When "Create a Security capacity" window pops-up select the following
+
+    ![nmap](./images/cfs-create-wizard.jpg)
+
+    d. Azure Subscription - select your subscription. For example "Azure Pass - Sponsorship"
+
+    e. Resource group - select any RG can be used or select "Create a new one"
+
+    f. Capacity name - type any unique name here
+
+    g. Prompt evaluation location - use any of the available locations
+
+    h. Capacity region - this field should be populated from the previous option
+
+    i. Security compute units - 1 SCU seem to be enough (this can be changed in the Azure Portal). Also it this seems to be $4/hour
+
+    >**Note**: In April 2024, Copilot for Security (CFS) and Security Compute Units can consume a sizeable amount of Azure Credits. Please check your Azure Cost Management for more details.
+
+    j. Acknowledge Terms and Conditions checkbox
+
+    k. Select "Create"
+
+    l. Once complete Copilot for Security is live with the "promptbar" at the bottom of the screen
+
+    ![nmap](./images/cfs-promptbar.jpg)
+
+9. Validation of Copilot for Security (CFS) embedded experience in Defender XDR
+
+    a. Go to https://security.microsoft.com (Defender XDR portal) on the left select pane: Investigation & Response - Incidents & Alerts - Incidents.
+
+    b. Select an incident and Copilot for Security embedded experience shows up.
+
+   ![nmap](./images/cfs-xdr-sentinel.jpg)
+   
 ## Clean up
 
 1. Run the script delete.ps1
+   
+3. Clean up Copilot for Security (CFS)
+
+   a. Log on to https://portal.azure.com
+   
+   b. Navigate to the Copilot of Security Resource group
+   
+   c. Delete the resource group to stop Azure Credit charges
