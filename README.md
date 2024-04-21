@@ -2,6 +2,8 @@
 
 ## Setup instructions
 
+We encourage participants of the upcomingthis CoHack to utilize their own subscription or Bring Your Own Subscription (BYOS) to ensure they can fully engage with and effectively tackle the challenges presented. As of April 2024, we would like to inform you that demo environments are not available for this event. We appreciate your understanding and are here to support you throughout the experience. For cost details plese see: https://techcommunity.microsoft.com/t5/microsoft-security-copilot-blog/microsoft-copilot-for-security-general-availability-details/ba-p/4079970
+
 1. Download files from the Setup folder.
 
 2. Start Azure CloudShell.
@@ -25,7 +27,7 @@
     - Login
     - Password 
 
-## Solution For Challenge 1
+# Solution For Challenge 1
 
 ## Creating Sentinel Incident Data As An Attacker
 
@@ -107,7 +109,7 @@
 
 >**Note**: Don't modify the "user name" parameter
 
-## Solution For Challenge 2
+# Solution For Challenge 2
 
 ## Unified Security Operations Platform As A Defender
 
@@ -122,6 +124,10 @@
     c. Validate incident data created from previous sections are showing up.
 
 ## Enabling Copilot for Security (CFS) For Help Remediations As A Defender
+
+There are 2 options to enable Copilot for Security (CFS) in a tenant. Both options require for the attendees to have either Global Administrator or Security Administrator role in the tenant.
+
+## OPTION 1: Enabling Copilot for Security (CFS)
 
 7. Implementation of Copilot for Security Steps without the Azure Portal
 
