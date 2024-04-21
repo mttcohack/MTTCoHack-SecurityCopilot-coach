@@ -2,7 +2,7 @@
 
 ## Setup instructions
 
-We encourage participants of the upcomingthis CoHack to utilize their own subscription or Bring Your Own Subscription (BYOS) to ensure they can fully engage with and effectively tackle the challenges presented. As of April 2024, we would like to inform you that demo environments are not available for this event. We appreciate your understanding and are here to support you throughout the experience. For cost details plese see: https://azure.microsoft.com/en-us/pricing/details/microsoft-copilot-for-security
+We encourage participants of the upcomingthis CoHack to utilize their own subscription or Bring Your Own Subscription (BYOS) to ensure they can fully engage with and effectively tackle the challenges presented. As of April 2024, we would like to inform you that demo environments are not available for this event. Additionally Currently, Copilot for Security is not designed for use by customers using US government clouds. We appreciate your understanding and are here to support you throughout the experience. For cost details plese see: https://azure.microsoft.com/en-us/pricing/details/microsoft-copilot-for-security
 
 1. Download files from the Setup folder.
 
@@ -125,9 +125,15 @@ We encourage participants of the upcomingthis CoHack to utilize their own subscr
 
 ## Enabling Copilot for Security (CFS) For Help Remediations As A Defender
 
-There are 2 options to enable Copilot for Security (CFS) in a tenant. Both options require for the attendees to have either Global Administrator or Security Administrator role in the tenant.
+**Minimum Requirements**
 
-## OPTION 1: Enabling Copilot for Security (CFS)
+- **Azure Subscription**: You need to have an Azure subscription to purchase security compute units
+    
+- **Security Compute Units (SCUs)**: These are the required units of resources needed for dependable and consistent performance of Microsoft Copilot for Security1. You can provision SCUs and increase or decrease them at any time.
+
+- **Capacity:** This is an Azure resource that contains SCUs. You can manage capacity by increasing or decreasing provisioned SCUs within the Azure portal or the Copilot for Security portal
+
+For more details see: https://learn.microsoft.com/en-us/copilot/security/get-started-security-copilot
 
 7. Implementation of Copilot for Security Steps without the Azure Portal
 
@@ -160,6 +166,14 @@ There are 2 options to enable Copilot for Security (CFS) in a tenant. Both optio
     l. Once complete Copilot for Security is live with the "promptbar" at the bottom of the screen
 
     ![nmap](./images/cfs-promptbar.jpg)
+
+## OPTION 2: Enabling Copilot for Security (CFS)
+
+7. Implementation of Copilot for Security Steps with the Azure Portal
+
+    a. Read Learn documentation https://learn.microsoft.com/en-us/training/modules/security-copilot-getting-started/6-describe-how-to-enable-security-copilot for general implementation information
+
+    b. 
 
 ## Validation That All Services Are Working
 
