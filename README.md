@@ -167,14 +167,6 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
 
     ![nmap](./images/cfs-promptbar.jpg)
 
-## OPTION 2: Enabling Copilot for Security (CFS)
-
-7. Implementation of Copilot for Security Steps with the Azure Portal
-
-    a. Read Learn documentation https://learn.microsoft.com/en-us/training/modules/security-copilot-getting-started/6-describe-how-to-enable-security-copilot for general implementation information
-
-    b. 
-
 ## Validation That All Services Are Working
 
 8. Validation of Copilot for Security (CFS) embedded experience in Defender XDR
