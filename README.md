@@ -2,15 +2,15 @@
 
 ## Setup instructions
 
-We encourage participants of the upcomingthis CoHack to utilize their own subscription or Bring Your Own Subscription (BYOS) to ensure they can fully engage with and effectively tackle the challenges presented. As of April 2024, we would like to inform you that demo environments are not available for this event. Additionally, Copilot for Security is not designed for use by customers using US government clouds. We appreciate your understanding and are here to support you throughout the experience. For cost details plese see: https://azure.microsoft.com/en-us/pricing/details/microsoft-copilot-for-security
+We encourage participants of the upcomingthis CoHack to utilize their own subscription or Bring Your Own Subscription (BYOS) to ensure they can fully engage with and effectively tackle the challenges presented. As of April 2024, we would like to inform you that demo environments are not available for this event. Additionally, Copilot for Security is not designed for use by customers using US government clouds. We appreciate your understanding and are here to support you throughout the experience. For cost details plese see: https://azure.microsoft.com/en-us/pricing/details/microsoft-copilot-for-security.
 
-1. Download files from the Setup folder.
+1. Download files from the Setup folder
 
-2. Start Azure CloudShell.
+2. Start Azure CloudShell
 
-3. Upload files downloaded from Setup folder to CloudShell. 
+3. Upload files downloaded from Setup folder to CloudShell
 
-4. If you have many subscriptions, set the subscription where you are going to deploy the environment. For this, you can use the cmd "AZ-SetContext".
+4. If you have many subscriptions, set the subscription where you are going to deploy the environment. For this, you can use the cmd "AZ-SetContext"
     
     ```powershell
     Set-AzContext -SubscriptionId "79c2a240-1a7f-482f-a315-xxxxxxxxx"
@@ -31,9 +31,9 @@ We encourage participants of the upcomingthis CoHack to utilize their own subscr
 
 ## Creating Sentinel Incident Data As An Attacker
 
-1. Connect to the hack-vm using RDP. Your coach will provide you with the Public IP address and credentials.
+1. Connect to the hack-vm using RDP. Your coach will provide you with the Public IP address and credentials
 
-2. Use a tool from the toolbox to discover the private IP address of the workstation-vm.
+2. Use a tool from the toolbox to discover the private IP address of the workstation-vm
     
     a. Download and install Nmap from "https://nmap.org/download.html"
     
@@ -43,13 +43,13 @@ We encourage participants of the upcomingthis CoHack to utilize their own subscr
     
     ![nmap](./images/nmap.jpg)
  
-3. Use a tool from the toolbox to find the login and password that will allow you to connect to the workstation-vm using RDP.
+3. Use a tool from the toolbox to find the login and password that will allow you to connect to the workstation-vm using RDP
 
     a. Download Hydra application from https://github.com/maaaaz/thc-hydra-windows
 
     b. Download username.txt and password.txt files 
 
-    c. Using Hydra application run a brute force attack on rdp port of the vm 10.0.0.100.         
+    c. Using Hydra application run a brute force attack on rdp port of the vm 10.0.0.100      
   
       ```powershell
     .\hydra.exe -t 4 -V -f -L .\username.txt -P .\password.txt rdp://10.0.0.100
@@ -63,9 +63,9 @@ We encourage participants of the upcomingthis CoHack to utilize their own subscr
     
     ![hydra](./images/hydra.jpg)
     
-4. Connect to the workstation-vm using RDP and the login and password found in step 3.
+4. Connect to the workstation-vm using RDP and the login and password found in step 3
 
-5. Discover the IP address of the domain controller.  
+5. Discover the IP address of the domain controller
 
     ```cmd
       nslookup
@@ -77,7 +77,7 @@ We encourage participants of the upcomingthis CoHack to utilize their own subscr
     
     >**Note**: You can help attendees with this link https://support.avigilon.com/s/article/Windows-How-to-Get-the-IP-Port-Used-and-IP-Addresses-of-Domain-Controllers-AD-Servers?language=en_US
 
-6. Use a tool from the toolbox, (a) to find the login and password hash of the Domain Admin then (b) to connect to the domain controller using RDP.
+6. Use a tool from the toolbox, (a) to find the login and password hash of the Domain Admin then (b) to connect to the domain controller using RDP
 
     a. Disable "Real-time Protection", "Cloud-delivered protection" and "Automatic sample submission" in Windows Security
     
@@ -111,7 +111,7 @@ We encourage participants of the upcomingthis CoHack to utilize their own subscr
 
 7. OPTIONAL: Simulated Attack for more incident data
 
-   a. Open A-Simulation.txt found in this repository or in the "resources" attendee repository.
+   a. Open A-Simulation.txt found in this repository or in the "resources" attendee repository
 
    b. Copy the entire content of the TXT file
 
@@ -129,13 +129,13 @@ We encourage participants of the upcomingthis CoHack to utilize their own subscr
 
 6. Connecting Sentinel into Defender XDR (Preview)
 
-    a. Microsoft Sentinel is now available as part of the public preview for the Unified Security operations platform in the Microsoft Defender XDR portal. Refer to this documentation https://learn.microsoft.com/en-us/azure/sentinel/microsoft-sentinel-defender-portal on how to connect Microsoft Sentinel to Microsoft Defender XDR.
+    a. Microsoft Sentinel is now available as part of the public preview for the Unified Security operations platform in the Microsoft Defender XDR portal. Refer to this documentation https://learn.microsoft.com/en-us/azure/sentinel/microsoft-sentinel-defender-portal on how to connect Microsoft Sentinel to Microsoft Defender XDR
 
     ![nmap](./images/xdr-sentinel-defender-portal.jpg)
 
-    b. Go to https://security.microsoft.com (Defender XDR portal) on the left select pane: Investigation & Response - Incidents & Alerts - Incidents.
+    b. Go to https://security.microsoft.com (Defender XDR portal) on the left select pane: Investigation & Response - Incidents & Alerts - Incidents
 
-    c. Validate incident data created from previous sections are showing up.
+    c. Validate incident data created from previous sections are showing up
 
 ## Enabling Copilot for Security (CFS) For Help Remediations As A Defender
 
@@ -143,7 +143,7 @@ We encourage participants of the upcomingthis CoHack to utilize their own subscr
 
 - **Azure Subscription**: You need to have an Azure subscription to purchase security compute units
     
-- **Security Compute Units (SCUs)**: These are the required units of resources needed for dependable and consistent performance of Microsoft Copilot for Security1. You can provision SCUs and increase or decrease them at any time.
+- **Security Compute Units (SCUs)**: These are the required units of resources needed for dependable and consistent performance of Microsoft Copilot for Security1. You can provision SCUs and increase or decrease them at any time
 
 - **Capacity:** This is an Azure resource that contains SCUs. You can manage capacity by increasing or decreasing provisioned SCUs within the Azure portal or the Copilot for Security portal
 
@@ -171,7 +171,7 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
 
     i. Security compute units - 1 SCU seem to be enough (this can be changed in the Azure Portal). Also it this seems to be $4/hour
 
-    >**Note**: In April 2024, Copilot for Security (CFS) and Security Compute Units can consume a sizeable amount of Azure Credits. Please check your Azure Cost Management for more details.
+    >**Note**: In April 2024, Copilot for Security (CFS) and Security Compute Units can consume a sizeable amount of Azure Credits. Please check your Azure Cost Management for more details
 
     j. Acknowledge Terms and Conditions checkbox
 
@@ -185,9 +185,9 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
 
 8. Validation of Copilot for Security (CFS) embedded experience in Defender XDR
 
-    a. Go to https://security.microsoft.com (Defender XDR portal) on the left select pane: Investigation & Response - Incidents & Alerts - Incidents.
+    a. Go to https://security.microsoft.com (Defender XDR portal) on the left select pane: Investigation & Response - Incidents & Alerts - Incidents
 
-    b. Select an incident and Copilot for Security embedded experience shows up.
+    b. Select an incident and Copilot for Security embedded experience shows up
 
    ![nmap](./images/cfs-xdr-sentinel.jpg)
 
@@ -195,7 +195,7 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
 
 9. Checking that all Copilot for Security (CFS) plugins are enabled
 
-    a. In Copilot for Security portal, select the prompt bar
+    a. In Copilot for Security portal (not the embedded experience), select the prompt bar
     
     b. Select the four box icon inside the prompt bar to bring up the plugin window
 
@@ -207,11 +207,26 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
 
     d. Close the plugin window by accepting the changes
 
-10. Prompting Copilot for Security (CFS) for incident summary
+10. Prompting Copilot for Security (CFS) for the incident summary
 
     ![nmap](./images/cfs-copilot-how-it-works.jpg)
 
-    a. 
+    a. In Copilot for Security (CFS) portal (not the embedded experience), select the prompt bar
+
+    b. Select the two star icon (to the left next to the plugin icon) in the prompt bar to bring up the Promptbook library
+
+    >**Note**: This can be done differently by typing the prompt "Summarize Defender incident [incident number]"
+    >  ![nmap](./images/cfs-promptbook-summary.jpg)
+
+    c. Select a prompt with a similar name like "Microsoft 365 Defender incident investigation"
+
+    d. Under the "Incident ID" field, type in the incident that previously created
+
+    e. Select "Run" at the top for Copilot for Security (CFS) to provide in depth summary
+
+    ![nmap](./images/cfs-promptbook-summary.jpg)
+
+12. 
    
 ## Clean up
 
