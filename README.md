@@ -225,8 +225,6 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
     e. Select "Run" at the top for Copilot for Security (CFS) to provide in depth summary
 
     ![nmap](./images/cfs-promptbook-summary.jpg)
-
-12. 
    
 ## Clean up
 
