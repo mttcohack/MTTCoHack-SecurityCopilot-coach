@@ -201,7 +201,7 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
 
     ![nmap](./images/cfs-prompt-bar-new.jpg)
 
-    c. Toggle on as many plugins as possible to enrich the CFS session
+    c. Toggle on as many plugins as possible to enrich the Copilot for Security (CFS) session
 
     ![nmap](./images/cfs-manage-plugins.jpg)
 
