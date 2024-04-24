@@ -217,7 +217,7 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
 
     >**Note**: This can be done differently by typing the prompt "Summarize Defender incident [incident number]"
     
-    ![nmap](./images/cfs-promptbook-summary.jpg)
+    ![nmap](./images/cfs-prompt-summary2.jpg)
 
     c. Select a prompt with a similar name like "Microsoft 365 Defender incident investigation"
 
