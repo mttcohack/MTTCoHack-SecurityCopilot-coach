@@ -127,7 +127,7 @@ We encourage participants of the CoHack to utilize their own subscription or Bri
 
 ## Unified Security Operations Platform As A Defender
 
-6. Connecting Sentinel into Defender XDR (Preview)
+8. Connecting Sentinel into Defender XDR (Preview)
 
     a. Microsoft Sentinel is now available as part of the public preview for the Unified Security operations platform in the Microsoft Defender XDR portal. Refer to this documentation https://learn.microsoft.com/en-us/azure/sentinel/microsoft-sentinel-defender-portal on how to connect Microsoft Sentinel to Microsoft Defender XDR
 
@@ -149,7 +149,7 @@ We encourage participants of the CoHack to utilize their own subscription or Bri
 
 For more details see: https://learn.microsoft.com/en-us/copilot/security/get-started-security-copilot
 
-7. Implementation of Copilot for Security Steps without the Azure Portal
+9. Implementation of Copilot for Security Steps without the Azure Portal
 
     a. Read Learn documentation https://learn.microsoft.com/en-us/training/modules/security-copilot-getting-started/6-describe-how-to-enable-security-copilot for general implementation information
 
@@ -183,7 +183,7 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
 
 ## Validation That All Services Are Working
 
-8. Validation of Copilot for Security (CFS) embedded experience in Defender XDR
+10. Validation of Copilot for Security (CFS) embedded experience in Defender XDR
 
     a. Go to https://security.microsoft.com (Defender XDR portal) on the left select pane: Investigation & Response - Incidents & Alerts - Incidents
 
@@ -193,7 +193,7 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
 
 ## Copilot for Security (CFS) Incident Summary
 
-9. Checking that all Copilot for Security (CFS) plugins are enabled
+11. Checking that all Copilot for Security (CFS) plugins are enabled
 
     a. In Copilot for Security portal (not the embedded experience), select the prompt bar
     
@@ -207,7 +207,7 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
 
     d. Close the plugin window by accepting the changes
 
-10. Prompting Copilot for Security (CFS) for the incident summary
+12. Prompting Copilot for Security (CFS) for the incident summary
 
     ![nmap](./images/cfs-copilot-how-it-works.jpg)
 
@@ -229,9 +229,9 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
    
 ## Clean up
 
-1. Run the script delete.ps1
+13. Run the script delete.ps1
    
-3. Clean up Copilot for Security (CFS)
+14. Clean up Copilot for Security (CFS)
 
    a. Log on to https://portal.azure.com
    
