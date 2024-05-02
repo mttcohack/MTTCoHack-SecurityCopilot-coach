@@ -233,8 +233,8 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
    
 14. Clean up Copilot for Security (CFS)
 
-   a. Log on to https://portal.azure.com
-   
-   b. Navigate to the Copilot of Security Resource group
-   
-   c. Delete the resource group to stop Azure Credit charges
+    a. Log on to https://portal.azure.com
+
+    b. Navigate to the Copilot of Security Resource group
+
+    c. Delete the resource group to stop Azure Credit charges
