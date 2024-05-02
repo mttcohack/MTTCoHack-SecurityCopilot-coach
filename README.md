@@ -143,7 +143,7 @@ We encourage participants of the CoHack to utilize their own subscription or Bri
 
 - **Azure Subscription**: You need to have an Azure subscription to purchase security compute units
     
-- **Security Compute Units (SCUs)**: These are the required units of resources needed for dependable and consistent performance of Microsoft Copilot for Security1. You can provision SCUs and increase or decrease them at any time
+- **Security Compute Units (SCUs)**: These are the required units of resources needed for dependable and consistent performance of Microsoft Copilot for Security. You can provision SCUs and increase or decrease them at any time
 
 - **Capacity:** This is an Azure resource that contains SCUs. You can manage capacity by increasing or decreasing provisioned SCUs within the Azure portal or the Copilot for Security portal
 
