@@ -31,6 +31,8 @@ We encourage participants of the CoHack to utilize their own subscription or Bri
 
 ## Creating Sentinel Incident Data As An Attacker
 
+ >**Note**: Kindly instruct learners not to reboot the workstation-vm after deployment until they have completed part 1. Any deviation from this recommendation will result in the removal of DCADMIN credentials from the VM’s memory, rendering the credential hash hacking tool ineffective.
+
 1. Connect to the hack-vm using RDP. Your coach will provide you with the Public IP address and credentials
 
 2. Use a tool from the toolbox to discover the private IP address of the workstation-vm
