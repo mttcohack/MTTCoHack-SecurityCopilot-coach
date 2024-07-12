@@ -47,7 +47,7 @@ Run a detection test to verify onboarding, following the link in the documentati
 Add the download folder to Defender for Endpoint "Automation folder exclusions" setting.
 ![Automation folder exclusions](./images/MDE%20exclusion.png)
 
-## Set up Permissions for CoHack Participants
+## Set up Permissions and Access Package for CoHack Participants
 
 - In Entra ID, create security group "CoHack Participants"
 - In Azure, under resource group "rg-hack", assign contributor role to the newly created security group
@@ -57,13 +57,15 @@ Add the download folder to Defender for Endpoint "Automation folder exclusions" 
 ![Microsoft Defender XDR Permission](./images/XDR%20permission.png)
   - Add a Defender for Endpoint device group. Set device name starting with "work" as the matching rule. Add the security group to the user access. Refer to [Create and manage device groups](https://learn.microsoft.com/en-us/defender-endpoint/machine-groups).
 ![Device Group](./images/MDE%20device%20group.png)
+- In Entra ID, create an access package. Refer to [Create an access package in entitlement management](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-create) for more information.
+  - Add the security group in "Resource roles" tab
+  - Choose "For users not in your directory" and "All users (All connected organizations + any new external users)" in "Requests" tab 
 
 ## Invite CoHack Participants
 
-In Entra ID, invite participants as external users
-- In message, state that this is for CoHack participants to join the hacking environment, and participants must connect to MSFT-AzVPN in order to accept the invitation.
-- Under assignment, add "CoHack Participants" security group.
-- Send the invitation.
+Copy the link from the "My Access portal link" in the newly created access package, send it to the CoHack participants.
+
+CoHack participants will click the link to request the access. They may need to enable MSFT-AzVPN to set up MFA during the activation process.
 
 # Solution For Challenge 1
 
