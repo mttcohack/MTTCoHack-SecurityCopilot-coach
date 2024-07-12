@@ -1,7 +1,8 @@
 # Hacking Game on Copilot for Security - Coach
 
-## Setup instructions
+# Setup instructions
 
+## Create VMs
 We encourage participants of the CoHack to utilize their own subscription or Bring Your Own Subscription (BYOS) to ensure they can fully engage with and effectively tackle the challenges presented. As of April 2024, we would like to inform you that demo environments are not available for this event. Additionally, Copilot for Security is not designed for use by customers using US government clouds. We appreciate your understanding and are here to support you throughout the experience. For cost details please see: https://azure.microsoft.com/en-us/pricing/details/microsoft-copilot-for-security.
 
 1. Download files from the Setup folder
@@ -26,6 +27,40 @@ We encourage participants of the CoHack to utilize their own subscription or Bri
     - IPAddress
     - Login
     - Password 
+
+## Enable Unified Security Operations
+
+Microsoft Sentinel is now available as part of the public preview for the Unified Security operations platform in the Microsoft Defender XDR portal. Refer to this documentation [Microsoft Sentinel in the Microsoft Defender portal](https://learn.microsoft.com/en-us/azure/sentinel/microsoft-sentinel-defender-portal) for more information.
+
+![Microsoft Sentinel menu in the Defender portal](./images/xdr-sentinel-defender-portal.jpg)
+
+Refer to this documentation [Connect Microsoft Sentinel to Microsoft Defender XDR](https://learn.microsoft.com/en-us/defender-xdr/microsoft-sentinel-onboard) on how to connect Microsoft Sentinel to Microsoft Defender XDR.
+
+## Onboard workstation-vm to Microsoft Defender for Endpoint
+
+RDP to hack-vm, then RDP to workstation-vm.
+
+Follow [Onboard Windows devices using a local script](https://learn.microsoft.com/en-us/defender-endpoint/configure-endpoints-script) to onboard workstation-vm to Microsoft Defender for Endpoint.
+
+Run a detection test to verify onboarding, following the link in the documentation.
+
+## Set up Permissions for CoHack Participants
+
+- In Entra ID, create security group "CoHack Participants"
+- In Azure, under resource group "rg-hack", assign contributor role to the newly created security group
+- In Copilot for Security, add the security group under Owner role
+- In Defender XDR
+  - Add a customer role with all security operations permissions, assign the security group for Defender for Endpoint datasource. Refer to [Custom roles in role-based access control for Microsoft Defender XDR](https://learn.microsoft.com/en-us/defender-xdr/custom-roles)
+![Microsoft Defender XDR Permission](./images/XDR%20permission.png)
+  - Add a Defender for Endpoint device group. Set device name starting with "work" as the matching rule. Add the security group to the user access. Refer to [Create and manage device groups](https://learn.microsoft.com/en-us/defender-endpoint/machine-groups).
+![Device Group](./images/MDE%20device%20group.png)
+
+## Invite CoHack Participants
+
+In Entra ID, invite participants as external users
+- In message, state that this is for CoHack participants to join the hacking environment, and participants must connect to MSFT-AzVPN in order to accept the invitation.
+- Under assignment, add "CoHack Participants" security group.
+- Send the invitation.
 
 # Solution For Challenge 1
 
@@ -84,7 +119,9 @@ We encourage participants of the CoHack to utilize their own subscription or Bri
     a. Disable "Real-time Protection", "Cloud-delivered protection" and "Automatic sample submission" in Windows Security
     
     ![win-sec](./images/windows-security.jpg)
-    
+
+    Add the Download folder to Exclusions under "Virtual & threat protection".
+ 
     b. Download mimikatz application from https://github.com/ParrotSec/mimikatz
     
     c. Run Mimikatz, then run the following commands:
@@ -127,24 +164,18 @@ We encourage participants of the CoHack to utilize their own subscription or Bri
 
 # Solution For Challenge 2
 
-## Unified Security Operations Platform As A Defender
+## Incident in Microsoft Defender XDR – Unified Security Operations Platform
 
-8. Connecting Sentinel into Defender XDR (Preview)
+8. Investigate Security Incidents
 
-    a. Microsoft Sentinel is now available as part of the public preview for the Unified Security operations platform in the Microsoft Defender XDR portal. Refer to this documentation https://learn.microsoft.com/en-us/azure/sentinel/microsoft-sentinel-defender-portal on how to connect Microsoft Sentinel to Microsoft Defender XDR
+    a. Go to https://security.microsoft.com (Defender XDR portal) on the left select pane: Investigation & Response - Incidents & Alerts - Incidents
 
-    ![nmap](./images/xdr-sentinel-defender-portal.jpg)
-
-    b. Go to https://security.microsoft.com (Defender XDR portal) on the left select pane: Investigation & Response - Incidents & Alerts - Incidents
-
-    c. Validate incident data created from previous sections are showing up
+    b. Validate incident data created from previous sections are showing up
 
 ## Enabling Copilot for Security (CFS) For Help Remediations As A Defender
 
 **Minimum Requirements**
 
-- **Azure Subscription**: You need to have an Azure subscription to purchase security compute units
-    
 - **Security Compute Units (SCUs)**: These are the required units of resources needed for dependable and consistent performance of Microsoft Copilot for Security. You can provision SCUs and increase or decrease them at any time
 
 - **Capacity:** This is an Azure resource that contains SCUs. You can manage capacity by increasing or decreasing provisioned SCUs within the Azure portal or the Copilot for Security portal
@@ -178,6 +209,7 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
     j. Acknowledge Terms and Conditions checkbox
 
     k. Select "Create"
+   >**Note**: If SCU creation fails here, go to Azure portal to create a "Microsoft Copilot for Security" resource, and come back to CFS portal to select the newly created SCU.
 
     l. Once complete Copilot for Security is live with the "promptbar" at the bottom of the screen
 
