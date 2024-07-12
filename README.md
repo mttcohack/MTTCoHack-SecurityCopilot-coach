@@ -44,6 +44,9 @@ Follow [Onboard Windows devices using a local script](https://learn.microsoft.co
 
 Run a detection test to verify onboarding, following the link in the documentation.
 
+Add the download folder to Defender for Endpoint "Automation folder exclusions" setting.
+![Automation folder exclusions](./images/MDE%20exclusion.png)
+
 ## Set up Permissions for CoHack Participants
 
 - In Entra ID, create security group "CoHack Participants"
