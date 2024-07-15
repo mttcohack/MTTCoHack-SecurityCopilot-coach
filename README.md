@@ -21,7 +21,9 @@ We encourage participants of the CoHack to utilize their own subscription or Bri
 
 5. Run the script deploy.ps1
   
-   >**Note**: Don't worry about Warning messages
+   >**Note**:
+   >- Don't worry about Warning messages.
+   > - The default configuration deploys to *North Europe*. To change the region, update line 1 in deploy.ps *and* co-hack-architecture.bicep.
 
 6. Once the deployment is done, share with attendees information about hack-vm that you get on the output section:
     - IPAddress
