@@ -57,7 +57,7 @@ Add the download folder to Defender for Endpoint "Automation folder exclusions" 
 - In Azure, under resource group "rg-hack", assign contributor role to the newly created security group
 - In Copilot for Security, add the security group under Owner role
 - In Defender XDR
-  - Add a customer role with all security operations permissions, assign the security group for Defender for Endpoint datasource. Refer to [Custom roles in role-based access control for Microsoft Defender XDR](https://learn.microsoft.com/en-us/defender-xdr/custom-roles)
+  - Add a customer role with all security operations permissions, assign the security group for Defender for Endpoint datasource. Refer to [Custom roles in role-based access control for Microsoft Defender XDR](https://learn.microsoft.com/en-us/defender-xdr/custom-roles). If you already switched to the new Defender XDR permission model, please set up the poermissions and groups under ([https://security.microsoft.com/securitypermissions](https://security.microsoft.com/mtp_roles)).
 ![Microsoft Defender XDR Permission](./images/XDR%20permission.png)
   - Add a Defender for Endpoint device group. Set device name starting with "work" as the matching rule. Add the security group to the user access. Refer to [Create and manage device groups](https://learn.microsoft.com/en-us/defender-endpoint/machine-groups).
 ![Device Group](./images/MDE%20device%20group.png)
