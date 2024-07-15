@@ -38,6 +38,8 @@ Microsoft Sentinel is now available as part of the public preview for the Unifie
 
 Refer to this documentation [Connect Microsoft Sentinel to Microsoft Defender XDR](https://learn.microsoft.com/en-us/defender-xdr/microsoft-sentinel-onboard) on how to connect Microsoft Sentinel to Microsoft Defender XDR.
 
+If you already have a connected Sentinel workspace, you need to disconnect Microsoft Defender XDR and reconnect to the CoHack Sentinel. You can do that in the Microsoft Defender XDR portal under [System/Settings/Sentinel](https://security.microsoft.com/sentinel/settings).
+
 ## Onboard workstation-vm to Microsoft Defender for Endpoint
 
 RDP to hack-vm, then RDP to workstation-vm.
