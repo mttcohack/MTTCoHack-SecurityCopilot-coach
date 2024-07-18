@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "HackVmAdminPassword": {
+      "value": "H@cker1984"
+    },
+    "WorkstationVmAdminPassword": {
+      "value": "P@ssw0rd1984"
+    },
+    "DcVmAdminPassword": {
+      "value": "P@ssw0rd1234@dmin"
+    },
+    "_artifactsLocationSasToken": {
+      "value": "sp=r&st=2023-03-30T13:53:03Z&se=2025-03-30T21:53:03Z&spr=https&sv=2021-12-02&sr=b&sig=Qy293B%2BbBQ1ok0Sxg3Z%2FVDN%2BbtqZMgBx2r9Nxd2tfzQ%3D"
+    },
+    "_artifactsLocation": {
+      "value": "https://straccneuro.blob.core.windows.net/"
+    },
+    "ScriptUrl":{
+      "value": "https://straccneuro.blob.core.windows.net/hack/script-workstation.ps1?sp=r&st=2023-04-02T17:04:14Z&se=2025-05-01T01:04:14Z&spr=https&sv=2021-12-02&sr=b&sig=1zb3iFFKLbufAQu8qslgrA1CS09vZB4eHukNnTrt3CQ%3D"
+    }
+}
+}
