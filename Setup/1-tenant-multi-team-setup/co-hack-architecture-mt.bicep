@@ -13,7 +13,7 @@ param HackVmAdminUsername string = 'hacker'
 @secure()
 param HackVmAdminPassword string 
 
-param WorkstationVmName string = 'workstation-vm-${team}'
+param WorkstationVmName string = 'workstation-${team}'
 param WorkstationVmNicName string = 'workstation-vm-nic-${team}' 
 param DcVmNsgName string = 'dc-vm-nsg-${team}'
 param WorkstationVmAdminUsername string = 'johnson'
