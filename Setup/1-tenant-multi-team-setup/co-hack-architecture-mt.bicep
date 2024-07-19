@@ -13,14 +13,14 @@ param HackVmAdminUsername string = 'hacker'
 @secure()
 param HackVmAdminPassword string 
 
-param WorkstationVmName string = 'workstation-${team}'
+param WorkstationVmName string = 'workstation-vm-${team}'
 param WorkstationVmNicName string = 'workstation-vm-nic-${team}' 
 param DcVmNsgName string = 'dc-vm-nsg-${team}'
 param WorkstationVmAdminUsername string = 'johnson'
 @secure()
 param WorkstationVmAdminPassword string
 
-param WorkstationVmPrivateIPAddress string = '10.0.0.100'
+param WorkstationVmPrivateIPAddress string = '10.${team}.0.100'
 param ScriptUrl string
 
 param DcVmName string = 'dc-vm-${team}'
@@ -28,7 +28,7 @@ param DcVmNicName string = 'dc-vm-nic-${team}'
 param DcVmAdminUsername string = 'dcadmin'
 @secure()
 param DcVmAdminPassword string
-param DcVmPrivateIPAddress string = '10.0.1.250'
+param DcVmPrivateIPAddress string = '10.${team}.1.250'
 
 param domainName string = 'contoso.com'
 param domainJoinOptions int = 3
@@ -44,20 +44,20 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2019-11-01' = {
   properties: {
     addressSpace: {
       addressPrefixes: [
-        '10.0.0.0/16'
+        '10.${team}.0.0/16'
       ]
     }
     subnets: [
       {
         name: 'external-subnet'
         properties: {
-          addressPrefix: '10.0.0.0/24'
+          addressPrefix: '10.${team}.0.0/24'
         }
       }
       {
         name: 'internal-subnet'
         properties: {
-          addressPrefix: '10.0.1.0/24'
+          addressPrefix: '10.${team}.1.0/24'
         }
       }
     ]
@@ -183,7 +183,7 @@ resource DcVmNetworkSecurityGroup 'Microsoft.Network/networkSecurityGroups@2019-
           protocol: '*'
           sourcePortRange: '*'
           destinationPortRange: '*'
-          sourceAddressPrefix: '10.0.0.100'
+          sourceAddressPrefix: '10.${team}.0.100'
           destinationAddressPrefix: '*'
           access: 'Allow'
           priority: 100
