@@ -3,7 +3,7 @@ param (
     $team
 )
 if ([string]::IsNullOrEmpty($region)) {
-    Write-Error "The region parameter is required. Example: ./deploy-mt -region 'northeurope' -team '01'"
+    Write-Error "The region parameter is required. Example: ./deploy-mt -region 'northeurope' -team '1'"
     exit 1
 }
 New-AzResourceGroup -name rg-hack-${team} -location $region
