@@ -1,9 +1,9 @@
-# Hacking Game on Copilot for Security - Coach
+# Hacking Game on Security Copilot - Coach
 
 # Setup instructions
 
 ## Create VMs
-We encourage participants of the CoHack to utilize their own subscription or Bring Your Own Subscription (BYOS) to ensure they can fully engage with and effectively tackle the challenges presented. As of April 2024, we would like to inform you that demo environments are not available for this event. Additionally, Copilot for Security is not designed for use by customers using US government clouds. We appreciate your understanding and are here to support you throughout the experience. For cost details please see: https://azure.microsoft.com/en-us/pricing/details/microsoft-copilot-for-security.
+We encourage participants of the CoHack to utilize their own subscription or Bring Your Own Subscription (BYOS) to ensure they can fully engage with and effectively tackle the challenges presented. As of April 2024, we would like to inform you that demo environments are not available for this event. Additionally, Security Copilot is not designed for use by customers using US government clouds. We appreciate your understanding and are here to support you throughout the experience. For cost details please see: https://azure.microsoft.com/en-us/pricing/details/microsoft-security-copilot.
 
 1. Download files from the Setup folder
 
@@ -55,7 +55,7 @@ Add the download folder to Defender for Endpoint "Automation folder exclusions" 
 
 - In Entra ID, create security group "CoHack Participants"
 - In Azure, under resource group "rg-hack", assign contributor role to the newly created security group
-- In Copilot for Security, add the security group under Owner role
+- In Security Copilot, add the security group under Owner role
 - In Defender XDR
   - Add a customer role with all security operations permissions, assign the security group for Defender for Endpoint datasource. Refer to [Custom roles in role-based access control for Microsoft Defender XDR](https://learn.microsoft.com/en-us/defender-xdr/custom-roles). If you already switched to the new Defender XDR permission model, please set up the poermissions and groups under ([https://security.microsoft.com/securitypermissions](https://security.microsoft.com/mtp_roles)).
 ![Microsoft Defender XDR Permission](./images/XDR%20permission.png)
@@ -181,17 +181,17 @@ CoHack participants will click the link to request the access. They may need to 
 
     b. Validate incident data created from previous sections are showing up
 
-## Enabling Copilot for Security (CFS) For Help Remediations As A Defender
+## Enabling Security Copilot (CFS) For Help Remediations As A Defender
 
 **Minimum Requirements**
 
-- **Security Compute Units (SCUs)**: These are the required units of resources needed for dependable and consistent performance of Microsoft Copilot for Security. You can provision SCUs and increase or decrease them at any time
+- **Security Compute Units (SCUs)**: These are the required units of resources needed for dependable and consistent performance of Microsoft Security Copilot. You can provision SCUs and increase or decrease them at any time
 
-- **Capacity:** This is an Azure resource that contains SCUs. You can manage capacity by increasing or decreasing provisioned SCUs within the Azure portal or the Copilot for Security portal
+- **Capacity:** This is an Azure resource that contains SCUs. You can manage capacity by increasing or decreasing provisioned SCUs within the Azure portal or the Security Copilot portal
 
 For more details see: https://learn.microsoft.com/en-us/copilot/security/get-started-security-copilot
 
-9. Implementation of Copilot for Security Steps without the Azure Portal
+9. Implementation of Security Copilot Steps without the Azure Portal
 
     a. Read Learn documentation https://learn.microsoft.com/en-us/training/modules/security-copilot-getting-started/6-describe-how-to-enable-security-copilot for general implementation information
 
@@ -213,48 +213,48 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
 
     i. Security compute units - 1 SCU seem to be enough (this can be changed in the Azure Portal). Also it this seems to be $4/hour
 
-    >**Note**: In April 2024, Copilot for Security (CFS) and Security Compute Units can consume a sizeable amount of Azure Credits. Please check your Azure Cost Management for more details
+    >**Note**: In April 2024, Security Copilot (CFS) and Security Compute Units can consume a sizeable amount of Azure Credits. Please check your Azure Cost Management for more details
 
     j. Acknowledge Terms and Conditions checkbox
 
     k. Select "Create"
-   >**Note**: If SCU creation fails here, go to Azure portal to create a "Microsoft Copilot for Security" resource, and come back to CFS portal to select the newly created SCU.
+   >**Note**: If SCU creation fails here, go to Azure portal to create a "Microsoft Security Copilot" resource, and come back to CFS portal to select the newly created SCU.
 
-    l. Once complete Copilot for Security is live with the "promptbar" at the bottom of the screen
+    l. Once complete Security Copilot is live with the "promptbar" at the bottom of the screen
 
     ![nmap](./images/cfs-promptbar.jpg)
 
 ## Validation That All Services Are Working
 
-10. Validation of Copilot for Security (CFS) embedded experience in Defender XDR
+10. Validation of Security Copilot (CFS) embedded experience in Defender XDR
 
     a. Go to https://security.microsoft.com (Defender XDR portal) on the left select pane: Investigation & Response - Incidents & Alerts - Incidents
 
-    b. Select an incident and Copilot for Security embedded experience shows up
+    b. Select an incident and Security Copilot embedded experience shows up
 
    ![nmap](./images/cfs-xdr-sentinel.jpg)
 
-## Copilot for Security (CFS) Incident Summary
+## Security Copilot (CFS) Incident Summary
 
-11. Checking that all Copilot for Security (CFS) plugins are enabled
+11. Checking that all Security Copilot (CFS) plugins are enabled
 
-    a. In Copilot for Security portal (not the embedded experience), select the prompt bar
+    a. In Security Copilot portal (not the embedded experience), select the prompt bar
     
     b. Select the four box icon inside the prompt bar to bring up the plugin window
 
     ![nmap](./images/cfs-prompt-bar-new.jpg)
 
-    c. Toggle on as many plugins as possible to enrich the Copilot for Security (CFS) session
+    c. Toggle on as many plugins as possible to enrich the Security Copilot (CFS) session
 
     ![nmap](./images/cfs-manage-plugins.jpg)
 
     d. Close the plugin window by accepting the changes
 
-12. Prompting Copilot for Security (CFS) for the incident summary
+12. Prompting Security Copilot (CFS) for the incident summary
 
     ![nmap](./images/cfs-copilot-how-it-works.jpg)
 
-    a. In Copilot for Security (CFS) portal (not the embedded experience), select the prompt bar
+    a. In Security Copilot (CFS) portal (not the embedded experience), select the prompt bar
 
     b. Select the two star icon (to the left next to the plugin icon) in the prompt bar to bring up the Promptbook library
 
@@ -266,7 +266,7 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
 
     d. Under the "Incident ID" field, type in the incident that previously created
 
-    e. Select "Run" at the top for Copilot for Security (CFS) to provide in depth summary
+    e. Select "Run" at the top for Security Copilot (CFS) to provide in depth summary
 
     ![nmap](./images/cfs-promptbook-summary.jpg)
    
@@ -274,7 +274,7 @@ For more details see: https://learn.microsoft.com/en-us/copilot/security/get-sta
 
 13. Run the script delete.ps1
    
-14. Clean up Copilot for Security (CFS)
+14. Clean up Security Copilot (CFS)
 
     a. Log on to https://portal.azure.com
 
