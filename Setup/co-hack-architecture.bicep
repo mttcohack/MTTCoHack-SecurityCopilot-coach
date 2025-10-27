@@ -30,6 +30,7 @@ param DcVmPrivateIPAddress string = '10.0.1.250'
 
 param domainName string = 'contoso.com'
 param domainJoinOptions int = 3
+param createADPDCUrl string = 'https://raw.githubusercontent.com/mttcohack/MTTCoHack-SecurityCopilot-coach/c8557d2dd7eccc286a3a113163f83839541dfd19/CreateADPDC.zip'
 
 resource virtualNetwork 'Microsoft.Network/virtualNetworks@2019-11-01' = {
   name: VnetName
@@ -290,7 +291,7 @@ resource virtualMachineName_CreateADForest 'Microsoft.Compute/virtualMachines/ex
     typeHandlerVersion: '2.19'
     autoUpgradeMinorVersion: true
     settings: {
-      ModulesUrl: 'https://raw.githubusercontent.com/mttcohack/MTTCoHack-SecurityCopilot-coach/main/CreateADPDC.ps1'
+      ModulesUrl: createADPDCUrl
       
       ConfigurationFunction: 'CreateADPDC.ps1\\CreateADPDC'
       Properties: {
