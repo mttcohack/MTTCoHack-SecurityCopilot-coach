@@ -297,7 +297,7 @@ resource virtualMachineName_CreateADForest 'Microsoft.Compute/virtualMachines/ex
     typeHandlerVersion: '2.19'
     autoUpgradeMinorVersion: true
     settings: {
-      ModulesUrl: uri(_artifactsLocation, 'hack/CreateADPDC.zip?${_artifactsLocationSasToken}')
+      ModulesUrl: 'https://raw.githubusercontent.com/mttcohack/MTTCoHack-SecurityCopilot-coach/main/CreateADPDC.ps1'
       
       ConfigurationFunction: 'CreateADPDC.ps1\\CreateADPDC'
       Properties: {
@@ -456,3 +456,4 @@ resource lockoutthresholdextension 'Microsoft.Compute/virtualMachines/extensions
 output IPAddress string = HackVmPublicIP.properties.ipAddress
 output Login string = HackVmAdminUsername
 output Password string = HackVmAdminPassword
+
