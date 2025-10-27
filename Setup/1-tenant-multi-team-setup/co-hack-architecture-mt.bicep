@@ -33,10 +33,9 @@ param DcVmPrivateIPAddress string = '10.${team}.1.250'
 param domainName string = 'contoso.com'
 param domainJoinOptions int = 3
 
-param _artifactsLocation string 
+param createADPDCUrl string = 'https://raw.githubusercontent.com/mttcohack/MTTCoHack-SecurityCopilot-coach/c8557d2dd7eccc286a3a113163f83839541dfd19/CreateADPDC.zip'
 
-@secure()
-param _artifactsLocationSasToken string 
+
 
 resource virtualNetwork 'Microsoft.Network/virtualNetworks@2019-11-01' = {
   name: VnetName
@@ -297,7 +296,7 @@ resource virtualMachineName_CreateADForest 'Microsoft.Compute/virtualMachines/ex
     typeHandlerVersion: '2.19'
     autoUpgradeMinorVersion: true
     settings: {
-      ModulesUrl: 'https://raw.githubusercontent.com/mttcohack/MTTCoHack-SecurityCopilot-coach/main/CreateADPDC.ps1'
+      ModulesUrl: createADPDCUrl
       
       ConfigurationFunction: 'CreateADPDC.ps1\\CreateADPDC'
       Properties: {
@@ -433,25 +432,6 @@ resource virtualMachineExtension 'Microsoft.Compute/virtualMachines/extensions@2
   }
 }
 
-resource lockoutthresholdextension 'Microsoft.Compute/virtualMachines/extensions@2021-11-01' = {
-  parent: HackVmNameWindows10
-  name:'lockoutthreshold'
-  location:location
-  dependsOn: [
-    virtualMachineExtension
-   ]
-  properties:{
-    publisher: 'Microsoft.Compute'
-    type:'CustomScriptExtension'
-    typeHandlerVersion: '1.10'
-    autoUpgradeMinorVersion: true
-    protectedSettings:{
-      fileUris: [ScriptUrl]
-      commandToExecute: 'powershell.exe -ExecutionPolicy Unrestricted -File script-workstation.ps1'
-    }
-    
-  }
-}
 
 output IPAddress string = HackVmPublicIP.properties.ipAddress
 output Login string = HackVmAdminUsername
