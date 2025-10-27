@@ -31,11 +31,6 @@ param DcVmPrivateIPAddress string = '10.0.1.250'
 param domainName string = 'contoso.com'
 param domainJoinOptions int = 3
 
-param _artifactsLocation string 
-
-@secure()
-param _artifactsLocationSasToken string 
-
 resource virtualNetwork 'Microsoft.Network/virtualNetworks@2019-11-01' = {
   name: VnetName
   location: location
@@ -431,25 +426,7 @@ resource virtualMachineExtension 'Microsoft.Compute/virtualMachines/extensions@2
   }
 }
 
-resource lockoutthresholdextension 'Microsoft.Compute/virtualMachines/extensions@2021-11-01' = {
-  parent: HackVmNameWindows10
-  name:'lockoutthreshold'
-  location:location
-  dependsOn: [
-    virtualMachineExtension
-   ]
-  properties:{
-    publisher: 'Microsoft.Compute'
-    type:'CustomScriptExtension'
-    typeHandlerVersion: '1.10'
-    autoUpgradeMinorVersion: true
-    protectedSettings:{
-      fileUris: [ScriptUrl]
-      commandToExecute: 'powershell.exe -ExecutionPolicy Unrestricted -File script-workstation.ps1'
-    }
-    
-  }
-}
+
 
 output IPAddress string = HackVmPublicIP.properties.ipAddress
 output Login string = HackVmAdminUsername
