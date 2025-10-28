@@ -281,6 +281,7 @@ resource DcWindows2016 'Microsoft.Compute/virtualMachines@2020-12-01' = {
   }
 }
 
+
 resource virtualMachineName_CreateADForest 'Microsoft.Compute/virtualMachines/extensions@2022-03-01' = {
   parent: DcWindows2016
   name: 'CreateADForest'
